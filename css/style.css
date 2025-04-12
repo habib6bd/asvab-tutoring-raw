@@ -30,7 +30,7 @@
 
 /* Homepage Hero section */
 .bg-hero {
-  background-image: url('images/asvab-bg.jpg');
+  background-image: url('../images/asvab-bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -109,7 +109,7 @@
 
 /*Slide Testimonial-section */
 .testimonial-section {
-  background: url('images/review_bg-1.jpg') center/cover no-repeat;
+  background: url('../images/review_bg-1.jpg') center/cover no-repeat;
   padding: 4rem 1rem;
 }
 
