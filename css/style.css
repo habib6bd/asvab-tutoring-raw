@@ -1,21 +1,29 @@
 :root {
   --primary-color: #f2a155;
-  --secondary-color: #04203c;
+  --secondary-color: #002341;
 }
 
-.bg-custom-blue {
+.navbar-nav .nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect: change to primary color */
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+.bg-custom-secondary {
   background-color: var(--secondary-color);
 }
 
-.text-custom-orange {
+.primary-color-custom {
   color: var(--primary-color);
 }
 
-.bg-custom-orange {
+.bg-custom-primary {
   background-color: var(--primary-color);
 }
 
-.bg-custom-orange:hover {
+.bg-custom-primary:hover {
   background-color: #e58a34;
 }
 
@@ -24,9 +32,67 @@
   border: none;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f2a155' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* Hide dropdown by default */
+.custom-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
+
+/* Show custom dropdown on hover */
+.nav-item.dropdown:hover .custom-dropdown {
+  display: block;
+}
+
+/* Style dropdown items */
+.custom-dropdown .dropdown-item {
+  color: #000;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 768px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+  }
+
+  .navbar .dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    margin-top: 0;
+  }
+
+  .navbar .dropdown:hover .dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* General dropdown padding */
+.navbar .dropdown-menu {
+  margin-top: 0;
+  padding: 0.5rem 0;
+}
+
 
 /* Homepage Hero section */
 .bg-hero {
@@ -39,7 +105,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 0;
 }
 .hero-content {
@@ -47,33 +113,44 @@
   z-index: 1;
 }
 .bg-custom-dark {
-  background-color: #012241;
+  background-color: var(--secondary-color);
 }
 .btn-primary-custom {
   background-color: #f2a155;
   color: #fff;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 .btn-primary-custom:hover {
+  color: #fff;
   background-color: #e58a34;
 }
 /* Hero section end */
 
 /* Top Courses Section */
 .bg-dark-blue {
-  background-color: #032A45;
+  background-color: var(--secondary-color);
 }
 
+.hover-lift {
+  transition: transform 0.3s ease-in-out;
+}
 .hover-lift:hover {
   transform: translateY(-5px);
-  transition: transform 0.3s ease;
+}
+.btn-secondary-custom {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;;
+  border: 1px solid var(--secondary-color);
+}
+.btn-secondary-custom:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
 }
 /* Top Courses Section End*/
 
 
 /* Meet Our Teachers Section*/
 .text-primary {
-  color: #0d6efd !important;
+  color: var(--secondary-color) !important;
 }
 /* Meet Our Teachers Section End*/
 
@@ -138,7 +215,7 @@
   border-radius: 50%;
   background-color: #d1d5db; /* gray-300 */
   border: 1px solid transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .carousel-indicators .active {
@@ -153,7 +230,7 @@
 /* Footer Section Start*/
 .footer-link,
   .footer-icon {
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
   }
 
   .footer-link:hover,
@@ -168,7 +245,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .footer-link:hover {
@@ -179,7 +256,7 @@
 .read-more-link {
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .read-more-link:hover {
