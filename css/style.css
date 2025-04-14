@@ -264,3 +264,30 @@
 }
 /* Footer Section End*/
 
+/* Common Banner */
+.banner {
+  height: 16rem;
+  background-image: url("../images/about-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.banner h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
