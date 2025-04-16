@@ -1,6 +1,7 @@
 :root {
   --primary-color: #f2a155;
   --secondary-color: #002341;
+  --primary-color-dark: #e58a34
 }
 
 .navbar-nav .nav-link {
@@ -17,6 +18,9 @@
 
 .primary-color-custom {
   color: var(--primary-color);
+}
+.primary-color-dark {
+  color: var(--primary-color-dark);
 }
 
 .bg-custom-primary {
@@ -293,3 +297,74 @@
 }
 
 
+/* Base tab styling */
+.nav-link.primary-color-custom {
+  color: var(--primary-color-dark);
+  border-radius: 5px;
+  margin-right: 5px;
+  /* transition: background-color 0.6s ease; */
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover effect */
+.nav-link.primary-color-custom:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Active tab styling (selected tab) */
+.nav-link.primary-color-custom.active {
+  background-color: var(--primary-color-dark) !important;
+  color: #fff !important;
+  border-color: var(--primary-color-dark);
+}
+.social-icon {
+  transition: all 0.3s ease-in-out ;
+}
+.social-icon:hover {
+  color: var(--secondary-color);
+}
+
+
+.question-number {
+  color: #fff;
+  background-color: #888;
+  font-weight: bold;
+  font-size: 1.1rem;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 2px 3px 4px #999;
+}
+.question-title {
+  color: #666;
+}
+
+/* Login section */
+.login-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+.login-card {
+  max-width: 500px;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+ 
+}
+
+.form-control {
+  border-radius: 0.5rem;
+}
+
+@media (min-height: 600px) {
+  .login-container {
+    align-items: center;
+  }
+}
